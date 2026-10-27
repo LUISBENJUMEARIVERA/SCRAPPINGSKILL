@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+:root {
+  --bg-canvas: #F4F4F0;
+  --bg-surface: #FFFFFF;
+  --bg-subtle: #EAEAE4;
+  --ink-primary: #0B0C0E;
+  --ink-secondary: #3E4149;
+  --ink-muted: #686C77;
+  --border-strong: #121316;
+  --border-subtle: #CFCFC7;
+  --accent-signal: #D9381E;
+  --status-ok: #0D6E52;
+  --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-canvas);
+  color: var(--ink-primary);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Swiss Grid Hairline Utilities */
+.swiss-border {
+  border-color: var(--border-strong);
+}
+
+.swiss-sub-border {
+  border-color: var(--border-subtle);
+}
+
+/* Accessible Focus Rings */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent-signal);
+  outline-offset: 2px;
+}
+
+/* Tactile Press Feedback */
+button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
